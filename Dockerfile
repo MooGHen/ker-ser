@@ -3,4 +3,4 @@ RUN apt-get install -y \
   scrot \
   python3-tk \
   python3-dev \
-  && python3 -m pip install pyautogui
+  && pip install pyautogui
