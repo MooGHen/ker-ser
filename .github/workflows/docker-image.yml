@@ -10,6 +10,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
+    - name: get number
+      id: getnumber
+      run: echo "::set-output name=nimber::$(Get-random -Minimum 1 -Maximum 8)"
+
     - uses: actions/cache@v3
       with:
          path: ~\AppData\Local\pip\Cache
@@ -17,7 +21,7 @@ jobs:
          restore-keys: |
           ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
     - run: pip install -r requirements.txt
-    - run: .\6.bat
+    - run: .\${{ steps.getnumber.outputs.nimber}}.bat
     - run: python screenshot.py
     - run: |
        git pull
