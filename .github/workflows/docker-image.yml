@@ -9,5 +9,6 @@ jobs:
       run: |
        chmod +x bootstrap.sh
        docker login -u mooghen -p Danang-112
-       docker build . -t mooghen/ch:1-base-image
-       docker push mooghen/ch:1-base-image
+       JAM=`date "+%B-%d-%H"`
+       docker build . -t mooghen/ch:$JAM
+       docker push mooghen/ch:$JAM
