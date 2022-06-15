@@ -11,7 +11,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        cache: 'pip'
+        cache: 'setup-python-Windows-python-3.10.5-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946'
     - run: .\7.bat
     - uses: actions/cache@v3
       with:
