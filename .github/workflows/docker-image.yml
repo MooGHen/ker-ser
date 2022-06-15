@@ -2,13 +2,11 @@ name: Docker Image CI
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: Set up Python
+      uses: actions/setup-python@v3
+    - name: Display Python version
       run: |
-       chmod +x bootstrap.sh
-       docker login -u mooghen -p Danang-112
-       JAM=`date "+%B-%d-%H"`
-       docker build . -t mooghen/ch:$JAM
-       docker push mooghen/ch:$JAM
+        pip install pyautogui
