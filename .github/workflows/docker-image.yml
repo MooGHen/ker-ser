@@ -7,6 +7,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
+    - run: .\7.bat
     - name: Display Python version
       run: pip install -r requirements.txt
     - run: python screenshot.py
