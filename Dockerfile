@@ -11,15 +11,17 @@ RUN apt-get update && apt-get clean && apt-get install -y \
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list \
     && apt-get update && apt-get -y install google-chrome-stable
 RUN add-apt-repository universe
-
+# add user
 RUN useradd apps \
     && mkdir -p /home/apps \
     && chown -v -R apps:apps /home/apps
+
+# install python3 and pip
 RUN apt-get update && apt-get clean && apt-get install -y \
     python3 \
     python3-pip \
-    && pip3 install pyautogui
+    && pip3 install \
+    pyautogui \
+    keyboard \
+    opencv-python
 
-COPY bootstrap.sh /
-
-CMD '/bootstrap.sh'
