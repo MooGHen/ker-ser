@@ -1,1 +1,1 @@
-start "" chrome.exe --profile-directory="%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%" https://youtu.be/XHf3n52uyOI --proxy-server="127.0.0.1:%RANDOM%"
+start "" chrome.exe --profile-directory="%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%" https://youtu.be/XHf3n52uyOI
