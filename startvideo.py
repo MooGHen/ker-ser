@@ -2,19 +2,15 @@
 import pyautogui
 import time
 import random
-for x in range(1,8):
-    print(x)
-    random_name = (random.randint(100,180))
-    screenshot = pyautogui.screenshot()
-    save_path = "{}screenshot.png".format(random_name)
-    screenshot.save(save_path)
+for s in range(1,8):
+    print(s)
     print('apakah sudah muter')
     time.sleep(1)
     pyautogui.moveTo(283, 283)
-    print(x)
+    print(s)
     pyautogui.moveTo(476, 354)
     time.sleep(1)
-    print(x)
+    print(s)
     pyautogui.moveTo(236, 336)
     time.sleep(1)
     
@@ -24,7 +20,7 @@ for x in range(1,8):
         time.sleep(1)
         pyautogui.click(x, y)
         print('video belum muter')
-        random_name = (random.randint(100,180))
+        random_name = (random.randint(100,102))
         screenshot = pyautogui.screenshot()
         save_path = "{}screenshot.png".format(random_name)
         screenshot.save(save_path)
