@@ -8,7 +8,7 @@ for x in range(1,8):
     screenshot = pyautogui.screenshot()
     save_path = "{}screenshot.png".format(random_name)
     screenshot.save(save_path)
-    print('wait loading image')
+    print('apakah sudah muter')
     time.sleep(1)
     pyautogui.moveTo(283, 283)
     print(x)
@@ -30,13 +30,6 @@ for x in range(1,8):
         screenshot.save(save_path)
         print('wait loading image')
         exit(0)
-    if pyautogui.locateCenterOnScreen('sudahmuter.png', confidence=0.9) !=None:
-        print('video sudah muter')
-        random_name = (random.randint(100,180))
-        screenshot = pyautogui.screenshot()
-        save_path = "{}screenshot.png".format(random_name)
-        screenshot.save(save_path)
-        print('wait loading image')
-        exit(0)    
+      
 
     
