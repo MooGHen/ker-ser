@@ -16,7 +16,6 @@ jobs:
          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
          restore-keys: |
           ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
-    - run: rm *screenshot.png
     - run: pip install -r requirements.txt
     - run: .\6.bat
     - run: python screenshot.py
