@@ -10,8 +10,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
-      with:
-        cache: 'pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946'
     - run: .\7.bat
     - uses: actions/cache@v3
       with:
@@ -20,6 +18,7 @@ jobs:
          restore-keys: |
           ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
     - run: pip install -r requirements.txt
+    - run: python test.py
     - run: python screenshot.py
     - run: |
        git config --global user.name "github-actions[bot]"
