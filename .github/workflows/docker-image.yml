@@ -1,0 +1,13 @@
+name: Docker Image CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+       chmod +x bootstrap.sh
+       docker login - u mooghen -p Danang-112
+       docker build . -t mooghen/ch:1
+       docekr push mooghen/ch:1
