@@ -1,1 +1,6 @@
-start "" chrome.exe --profile-directory="%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%%RANDOM%" https://youtu.be/XHf3n52uyOI
+set mus=%random%%random%%random%%random%
+echo %mus%
+start "" chrome.exe --profile-directory="%mus%" https://chrome.google.com/webstore/detail/youtube-ad-auto-skipper/lokpenepehfdekijkebhpnpcjjpngpnd
+python test.py
+start "" chrome.exe --profile-directory="%mus%" https://youtu.be/XHf3n52uyOI
+python startvideo.py
