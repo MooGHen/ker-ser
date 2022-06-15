@@ -10,7 +10,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
-    - run: .\7.bat
     - uses: actions/cache@v3
       with:
          path: ~\AppData\Local\pip\Cache
@@ -18,8 +17,7 @@ jobs:
          restore-keys: |
           ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
     - run: pip install -r requirements.txt
-    - run: python startvideo.py
-    - run: python screenshot.py
+    - run: .\7.bat
     - run: |
        git config --global user.name "github-actions[bot]"
        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
