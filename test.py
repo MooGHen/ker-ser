@@ -2,8 +2,8 @@ from pyautogui import *
 import pyautogui
 import time
 
-while 1:
-    print('wait loading image')
+for s in range(1,20):
+    print(s)
     time.sleep(1)
     if pyautogui.locateCenterOnScreen('1.png', confidence=0.9) !=None:
         x, y = pyautogui.locateCenterOnScreen('1.png', confidence=0.9)
