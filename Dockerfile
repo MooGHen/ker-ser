@@ -19,9 +19,5 @@ RUN useradd apps \
 # install python3 and pip
 RUN apt-get update && apt-get clean && apt-get install -y \
     python3 \
-    python3-pip \
-    && pip3 install \
-    pyautogui \
-    keyboard \
-    opencv-python
+    python3-pip
 
