@@ -101,11 +101,13 @@ log() {
 
 control_c() {
     echo ""
-    exit
+    exit 0
 }
 
 trap control_c SIGINT SIGTERM SIGHUP
 
 main
-
-exit
+google-chrome https://youtu.be/om8fgdkj0-g
+sleep 5s
+python3 /screenshot.py 
+exit 0
