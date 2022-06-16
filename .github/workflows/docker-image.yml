@@ -21,7 +21,7 @@ jobs:
          restore-keys: |
           ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
     - run: pip install -r requirements.txt
-    - run: .\2.bat
+    - run: .\3.bat
     #.\${{ steps.getnumber.outputs.nimber}}.bat
     - run: python screenshot.py
     - run: |
