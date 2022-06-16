@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-python@v3
     - name: get number
       id: getnumber
-      run: echo "::set-output name=nimber::$(Get-random -Minimum 1 -Maximum 8)"
+      run: echo "::set-output name=nimber::$(Get-random -Minimum 1 -Maximum 9)"
 
     - uses: actions/cache@v3
       with:
