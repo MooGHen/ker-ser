@@ -33,4 +33,34 @@ jobs:
        git add -A
        git commit -m "Update test.txt"
        git push
-    
+  buildss:
+    needs: build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+    - name: get numbers
+      id: getnumbers
+      run: echo "::set-output name=nimbers::$(Get-random -Minimum 1 -Maximum 9)"
+
+    - uses: actions/cache@v3
+      with:
+         path: ~\AppData\Local\pip\Cache
+         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+         restore-keys: |
+          ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
+    - run: pip install -r requirements.txt
+    - run: .\${{ steps.getnumbers.outputs.nimbers}}.bat
+    - run: python screenshot.py
+    - run: |
+       git pull
+       git config --global user.name "github-actions[bot]"
+       git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+       git add -A
+       git commit -m "Update test.txt"
+       git push
+  
