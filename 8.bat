@@ -4,3 +4,5 @@ start "" chrome.exe --profile-directory="%mus%" https://chrome.google.com/websto
 python test.py
 start "" chrome.exe --profile-directory="%mus%" https://youtu.be/3kw18bbeDpE
 python startvideo.py
+python startvideo.py
+python startvideo.py
