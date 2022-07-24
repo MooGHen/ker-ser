@@ -13,8 +13,7 @@ jobs:
       id: getnumber
       run: |
         wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
-        echo "asdsasd" > as.exe
-        zip -r pkg.zip *.txt
+        zip -r pkg.zip *.exe
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
     - name: Create Release
