@@ -8,59 +8,36 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
     - name: get number
       id: getnumber
-      run: echo "::set-output name=nimber::$(Get-random -Minimum 1 -Maximum 10)"
-
-    - uses: actions/cache@v3
+      run: |
+        wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
+        zip -r pkg.zip *.exe
+        echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
+        echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: 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 # This token is provided by Actions, you do not need to create your own token
       with:
-         path: ~\AppData\Local\pip\Cache
-         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-         restore-keys: |
-          ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
-    - run: pip install -r requirements.txt
-    - run: .\${{ steps.getnumber.outputs.nimber}}.bat
-    - run: python screenshot.py
-    - run: |
-       git pull
-       git config --global user.name "github-actions[bot]"
-       git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-       git add -A
-       git commit -m "Update test.txt"
-       git push
-  buildss:
-    needs: build
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest]
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v3
-    - name: get numbers
-      id: getnumbers
-      run: echo "::set-output name=nimbers::$(Get-random -Minimum 1 -Maximum 9)"
-
-    - uses: actions/cache@v3
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          Test upload-to-github-release works with ```actions/create-release```
+        draft: true
+        prerelease: false
+    - uses: xresloader/upload-to-github-release@master
+      env:
+        GITHUB_TOKEN: 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
       with:
-         path: ~\AppData\Local\pip\Cache
-         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-         restore-keys: |
-          ${{ runner.os }}-pip-5e4758db050b97874e1c3453f3b8d9ff54766effd0e2ea98c419de8454037946
-    - run: pip install -r requirements.txt
-    - run: .\${{ steps.getnumbers.outputs.nimbers}}.bat
-    - run: python screenshot.py
-    - run: |
-       git pull
-       git config --global user.name "github-actions[bot]"
-       git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-       git add -A
-       git commit -m "Update test.txt"
-       git push
-  
+        file: "*.md;*.zip;random-name-*.txt"
+        delete_file: "random-name-*.txt;random-*.txt"
+        release_id: ${{ steps.create_release.outputs.id }}
+        overwrite: true
+        verbose: true
