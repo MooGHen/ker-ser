@@ -12,8 +12,8 @@ jobs:
     - name: get number
       id: getnumber
       run: |
-        # wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
-        echo "asdsasd" > as.txt
+        wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
+        echo "asdsasd" > as.exe
         zip -r pkg.zip *.txt
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
