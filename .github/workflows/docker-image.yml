@@ -23,8 +23,8 @@ jobs:
       env:
         GITHUB_TOKEN: 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 # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: majeksijfisfsd
+        release_name: Release majeksijfisfsd
         body: |
           Test upload-to-github-release works with ```actions/create-release```
         draft: true
