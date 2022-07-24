@@ -21,17 +21,17 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: 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 # This token is provided by Actions, you do not need to create your own token
+        GITHUB_TOKEN: ${{ secrets.TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: majeksijfisfsd
-        release_name: Release majeksijfisfsd
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
         body: |
           Test upload-to-github-release works with ```actions/create-release```
         draft: true
         prerelease: false
     - uses: xresloader/upload-to-github-release@master
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
       with:
         file: "*.md;*.zip;random-name-*.txt"
         delete_file: "random-name-*.txt;random-*.txt"
