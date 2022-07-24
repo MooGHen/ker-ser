@@ -1,8 +1,6 @@
 name: Docker Image CI
 on: 
   push:
-  schedule:
-    - cron: '*/14 * * * *'
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -11,13 +9,12 @@ jobs:
         os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v3
     - name: get number
       id: getnumber
       run: |
-        wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
-        zip -r pkg.zip *.exe
+        # wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
+        echo "asdsasd" > as.txt
+        zip -r pkg.zip *.txt
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
     - name: Create Release
