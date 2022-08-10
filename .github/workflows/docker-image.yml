@@ -12,7 +12,8 @@ jobs:
     - name: get number
       id: getnumber
       run: |
-        wget https://doc-0o-2c-docs.googleusercontent.com/docs/securesc/t5n7m0aehusq65kg7llmr8t005u64tam/rvs1m6oqlg9av78e5p9ab7410qaepp06/1660154250000/01666075287657944838/11327542732094405920/12Zl2h73yo5sl4RSgyoxXIAWnbTSIN4iQ?e=download
+        pip install gdown
+        gdown https://drive.google.com/u/0/uc?id=12Zl2h73yo5sl4RSgyoxXIAWnbTSIN4iQ
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
     - name: Create Release
