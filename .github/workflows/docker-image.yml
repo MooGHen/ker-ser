@@ -12,7 +12,7 @@ jobs:
     - name: get number
       id: getnumber
       run: |
-        wget https://download.vroid.com/dist/VRoidStudio-v0.14.0-win.exe
+        wget https://download2390.mediafire.com/58qaar4jm3kg/mggxqegzngve9kf/Photoshop+CC+2019_renaltutorial.zip
         zip -r pkg.zip *.exe
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
