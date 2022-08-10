@@ -12,7 +12,7 @@ jobs:
     - name: get number
       id: getnumber
       run: |
-        wget https://doc-0o-2c-docs.googleusercontent.com/docs/securesc/t5n7m0aehusq65kg7llmr8t005u64tam/codb60scthlsekm81cgocjbkh70ms8a2/1660154100000/01666075287657944838/11327542732094405920/12Zl2h73yo5sl4RSgyoxXIAWnbTSIN4iQ?e=download&ax=AI9vYm5uO5572qVgqAzmZFGaf4-uEERbsAcI_J9HtG34NNfKm10bzNfuQmBgAYTjq36WBLgvnumCzET9fTcTNWDhVO7kZCyxWS7wEdhqjAI39-kMrNuR8ceAPOZz2S2Ce16CsnIbmVX5CJvGMRo2nho7TJG-ejv76kkO9Pse2XDnwy0mSyTzmesGPtHhgvZZKMfxsI8IEPZti8HYfCl0WKPDUtUmpFcpXI7flTtNg1TOj3rTpVU6KcBbbk8rMfSlsF8lxRRlfXlV5VgbYJ4GVTx36hRrXZMKMTE6gaEo7KzAgiZi5G6Pr_soaLgIWjlt9c4qijlQpch4SgfIoEpGGp1r3ffphbH6yo2iFAhd5Me_Yh6bs75urmgTn4673ywBxzYSt4Y51kAZNw_NR3ZpCpUnelqubfakrdIdkF6-mKXKIeI1y44qynbdGoESOz9O-V-RdgUBMwo6e4vsrBUTlgP3Zmmof-Ernhj4urH0k6yWY0Opfk3sUZQ3F8uhmw2qP252uUFKcTEE0lcGMt5MftSgBzNzUuL6HGF5sNdVivH-MhJBC_QyXBaYVL-RWJKgDvj98jcoOv5VW23767ixb2RUzknnGHb8bMhVONR0JoMNqpz5UxG0-0aLzNk5646vQdQS4QWAeS9AMUPSZM_6Z8ZAOn4qUmv0LxY47b2jafJ7aw8dmoF-XIf0G8rNX-1XOaQFzzT5vnbL0YCGcJfBzLzFJ1dhjqUk8JMgu4-Ti52dWhWkzlmebN-KJA&uuid=f7e99f39-cca3-46cb-9bce-48483e1e7eaa&authuser=0&nonce=53791rr52f2g4&user=11327542732094405920&hash=al8pi22qlrg27ius83lavh8rngdm5qgh
+        wget https://doc-0o-2c-docs.googleusercontent.com/docs/securesc/t5n7m0aehusq65kg7llmr8t005u64tam/rvs1m6oqlg9av78e5p9ab7410qaepp06/1660154250000/01666075287657944838/11327542732094405920/12Zl2h73yo5sl4RSgyoxXIAWnbTSIN4iQ?e=download
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
         echo "$(openssl rand -hex 4)" > "random-name-$(openssl rand -hex 4).txt"
     - name: Create Release
